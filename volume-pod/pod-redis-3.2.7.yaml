@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: k8sc-redis
+spec:
+  containers:
+  - name: k8sc-redis
+    image: sickp/alpine-redis:3.2.7
+    volumeMounts:
+    - name: k8sc-redis-storage
+      mountPath: /data/redis
+  volumes:
+  - name: k8sc-redis-storage
+    emptyDir: {}

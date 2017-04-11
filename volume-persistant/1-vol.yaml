@@ -1,0 +1,11 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: k8sc-vol-per-volume
+spec:
+  accessModes:
+    - ReadWriteOnce
+  capacity:
+    storage: 5Gi
+  hostPath:
+    path: /tmp/k8s-cookbook/_fixtures/data/redis
