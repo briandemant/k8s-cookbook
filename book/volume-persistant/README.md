@@ -1,25 +1,27 @@
 
-#running
+## Running
 
 ```bash
-kubectl create -f 1-vol.yaml
-kubectl create -f 2-claim.yaml
-kubectl create -f 3-pod.yaml
+./run.sh
 ```
-testing redis 
+
+## Testing setup is working 
 
 ```bash
-	kubectl exec -it vol-per-pod /usr/local/bin/redis-cli
-	> set hello world
-	
-	kubectl exec -it vol-per-pod /usr/local/bin/redis-cli
-	> get hello
+# enter container
+kubectl exec -it vol-per-pod /usr/local/bin/redis-cli
+=> set hello world
 
+# enter container again
+kubectl exec -it vol-per-pod /usr/local/bin/redis-cli
+=> get hello
 
-	kubectl delete -f 3-pod.yaml
-	kubectl create -f 3-pod.yaml
-	
-	kubectl exec -it vol-per-pod /usr/local/bin/redis-cli
-	-> get hello
+# destroy/recreate pod
+kubectl delete -f 3-pod.yaml
+kubectl create -f 3-pod.yaml
+
+# check saved state
+kubectl exec -it vol-per-pod /usr/local/bin/redis-cli 
+=> get hello
 ```
 look for changes in ../_fixtures/data/redis
