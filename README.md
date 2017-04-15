@@ -21,10 +21,11 @@ This is my collection of *"how to do ??"*, it is not (yet) ment to be **Good Pra
 	
 ### Running the cookbooks
 
+	export EXAMPLE=volume-pod
 	# Read the Readme
-	open https://github.com/briandemant/k8s-cookbook/blob/master/$EXAMPLE/README.md
+	open https://github.com/briandemant/k8s-cookbook/blob/master/book/$EXAMPLE/README.md
 	# install and run
-	./$EXAMPLE/run.sh
+	./book/$EXAMPLE/run.sh
 	
 ### Cheatsheets
 
