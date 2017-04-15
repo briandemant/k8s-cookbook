@@ -1,10 +1,10 @@
 kind: Pod
 apiVersion: v1
 metadata:
-  name: k8sc-vol-per-pod
+  name: vol-per-pod
 spec:
   containers:
-    - name: k8sc-vol-per-redis
+    - name: vol-per-redis
       image: sickp/alpine-redis:3.2.7
       command:
         - "/usr/local/bin/redis-server"
@@ -14,8 +14,8 @@ spec:
           protocol: TCP
       volumeMounts:
       - mountPath: "/data/redis"
-        name: k8sc-vol-per-mount
+        name: vol-per-mount
   volumes:
-    - name: k8sc-vol-per-mount
+    - name: vol-per-mount
       persistentVolumeClaim:
-        claimName: k8sc-vol-per-claim
+        claimName: vol-per-claim

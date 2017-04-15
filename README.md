@@ -3,27 +3,34 @@
 This is my collection of *"how to do ??"*, it is not (yet) ment to be **Good Practices** but just
  examples of how to make it work in a basic form.
  
-## Getting started with *Minikube*
+##
 
-#### start minikube
+## Getting started
 
-	minikube start
+### install minikube and kubectrl
 
-or on a mac (does not work in the current version on my mac)
+[Official Installation Guide](https://github.com/kubernetes/minikube/blob/master/README.md)
 
-	minikube start --vm-driver=xhyve
+### Setup namespace 
+
+	# create 
+	./namespace/install.sh
 	
-##### Delete it again
+	# use
+	./namespace/use.sh
+	
+### Running the cookbooks
 
-	minikube delete
+	# Read the Readme
+	open https://github.com/briandemant/k8s-cookbook/blob/master/$EXAMPLE/README.md
+	# install and run
+	./$EXAMPLE/run.sh
 	
-### make symlink on minikube host to match examples
+### Cheatsheets
 
-PATH_TO is usually something like /Users/**$USERNAME**/src/
-	
-	minikube ssh
-	#> ln -s $PATH_TO/k8s-cookbook /tmp/k8s-cookbook
-	
+ * [Minikube](docs/CHEATSHEET-MINIKUBE.md)
+ * [Kubectl](docs/CHEATSHEET-KUBECTL.md)
+
 ### Images used
 
 Images in use were chosen to be small (fast to download)

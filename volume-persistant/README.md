@@ -7,17 +7,17 @@ kubectl create -f 3-pod.yaml
 
 testing redis 
 
-kubectl exec -it k8sc-vol-per-pod /usr/local/bin/redis-cli
+kubectl exec -it vol-per-pod /usr/local/bin/redis-cli
 > set hello world
 
-kubectl exec -it k8sc-vol-per-pod /usr/local/bin/redis-cli
+kubectl exec -it vol-per-pod /usr/local/bin/redis-cli
 > get hello
 
 
 kubectl delete -f 3-pod.yaml
 kubectl create -f 3-pod.yaml
 
-kubectl exec -it k8sc-vol-per-pod /usr/local/bin/redis-cli
+kubectl exec -it vol-per-pod /usr/local/bin/redis-cli
 > get hello
 
 look for changes in ../_fixtures/data/redis

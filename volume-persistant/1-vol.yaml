@@ -1,7 +1,7 @@
 kind: PersistentVolume
 apiVersion: v1
 metadata:
-  name: k8sc-vol-per-volume
+  name: vol-per-volume
 spec:
   accessModes:
     - ReadWriteOnce
