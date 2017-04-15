@@ -2,6 +2,8 @@
 
 **NOTE : This local registry ephemera**
 
+```bash
 minikube start --vm-driver xhyve --insecure-registry localhost:5000
 
 kubectl apply -f local-registry.yml
+```

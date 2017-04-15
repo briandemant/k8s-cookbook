@@ -1,20 +1,30 @@
-## *Minikube* Cheatsheet
+# *Minikube* Cheatsheet
 
-#### start minikube
+## Start minikube
 
-	minikube start
 
+```bash
+minikube start
+```
 or on a mac (does not work in the current version on my mac)
 
-	minikube start --vm-driver=xhyve
-	
-##### Delete it again
+```bash
+minikube start --vm-driver=xhyve
+```
 
-	minikube delete
-	
-### make symlink on minikube host to match examples
+## Delete it again
+
+```bash
+minikube delete
+```
+
+## Make symlink on minikube host to match examples
 
 PATH_TO is usually something like /Users/**$USERNAME**/src/
-	
-	minikube ssh
-	#> ln -s $PATH_TO/k8s-cookbook /tmp/k8s-cookbook
+
+```bash
+# enter the minikube VM
+minikube ssh
+# within the minikube shell
+ln -s $PATH_TO/k8s-cookbook /tmp/k8s-cookbook
+```
